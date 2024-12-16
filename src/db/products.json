@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "hola eáleeee",
+    "description": "jkhdkjhasdkjs es un prodcuto holaaa",
+    "price": 68,
+    "thumbnail": "https://example.com/images/camiseta-deportiva.jpg",
+    "code": "CAM-ajkhsdkas",
+    "stock": 400
+  },
+  {
+    "id": 2,
+    "title": "pelelele",
+    "description": "jkhdkjhasdkjs es un prodcuto holaaa",
+    "price": 68,
+    "thumbnail": "https://example.com/images/camiseta-deportiva.jpg",
+    "code": "CAM-pelelele",
+    "stock": 400
+  },
+  {
+    "id": 3,
+    "title": "kjahdkaskhd",
+    "description": "jkhaskjhdajshdjkasdkhasjdhajskhdjhasjdhaskjhdkashdkjasdkjh",
+    "price": 68,
+    "thumbnail": "https://example.com/images/camiseta-deportiva.jpg",
+    "code": "CAM-pelelele",
+    "stock": 400
+  }
+]
