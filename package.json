@@ -6,11 +6,6 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch src/app.js",
-    "prettier": "prettier --write 'src/**/*.js'",
-    "lint": "eslint .",
-    "lint:js": "npx eslint src",
-    "lint:js:fix": "npx eslint src --fix",
-    "lint:report": "npx eslint src -o ./eslint-report.json --format json"
   },
   "author": "Carolina Pirela",
   "license": "ISC",
