@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --watch src/app.js",
+    "dev": "node --watch src/app.js"
   },
   "author": "Carolina Pirela",
   "license": "ISC",
