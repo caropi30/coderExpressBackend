@@ -1,17 +1,13 @@
 import { Router } from "express";
 import ProductManager from "../managers/productManager.js";
 
-const PRODUCTS_PATH = './src/db/products.json'
+const PRODUCTS_PATH = 'src/db/products.json'
 
 const productsRouter = Router();
 const productManager = new ProductManager(PRODUCTS_PATH);
 
-productsRouter.get("/", (req, res) => {
-  res.send("hola");
-});
 
-
-productsRouter.get("/api/products", async (req, res) => {
+productsRouter.get("/", async (req, res) => {
   let limit = req.query.limit;
   const products = await productManager.getProducts();
 
@@ -20,19 +16,19 @@ productsRouter.get("/api/products", async (req, res) => {
   res.send({ status: "success", products });
 });
 
-productsRouter.get("/api/products/:pid", async (req, res) => {
+productsRouter.get("/:pid", async (req, res) => {
   let id = parseInt(req.params.pid);
   const product = await productManager.getProductById(id);
   res.send(product);
 });
 
-productsRouter.post("/api/products", (req, res) => {
+productsRouter.post("/", (req, res) => {
   const newProduct = req.body;
   productManager.addProduct(newProduct);
   res.send("Producto creado con éxito");
 });
 
-productsRouter.put("/api/products/:pid", (req, res) => {
+productsRouter.put("/:pid", (req, res) => {
   let id = parseInt(req.params.pid);
   const { title, description, code, stock, thumbnail, price } = req.body;
   const alteredProduct = {
@@ -48,7 +44,7 @@ productsRouter.put("/api/products/:pid", (req, res) => {
   res.send("Producto modificado con éxito");
 });
 
-productsRouter.delete("/api/products/:pid", (req, res) => {
+productsRouter.delete("/:pid", (req, res) => {
   let id = parseInt(req.params.pid);
 
   if (id) {

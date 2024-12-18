@@ -15,7 +15,6 @@ cartRouter.post("/", async (req, res) => {
     }
 })
 
-//2) Listamos los productos que pertenecen a determinado carrito: 
 
 cartRouter.get("/:cid", async (req, res) => {
     const cartId = parseInt(req.params.cid); 
@@ -28,7 +27,6 @@ cartRouter.get("/:cid", async (req, res) => {
     }
 })
 
-//3) Agregar productos al carrito: 
 
 cartRouter.post("/:cid/product/:pid", async (req, res) => {
     const cartId = parseInt(req.params.cid); 
