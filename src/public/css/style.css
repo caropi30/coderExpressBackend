@@ -1,3 +1,29 @@
-body {
-    background-color: lightcoral;
-}
+.card {
+    width: 100%; /* La tarjeta ocupará todo el ancho de su columna */
+    display: flex;
+    flex-direction: column; /* Para estructurar el contenido verticalmente */
+    justify-content: space-between; /* Asegura que los elementos se distribuyan uniformemente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+    overflow: hidden; /* Evita desbordamientos del contenido */
+    height: 400px !important;
+  }
+  
+  .card img {
+    width: 100%; /* La imagen se ajusta al ancho de la tarjeta */
+    height: 150px; /* Fija una altura uniforme para las imágenes */
+    object-fit: cover; /* Asegura que las imágenes se adapten sin distorsión */
+  }
+  
+  .card-body {
+    width: 100%;
+    flex-grow: 1; /* Permite que el cuerpo crezca para ocupar el espacio disponible */
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en una columna */
+    justify-content: space-between; /* Distribuye los elementos verticalmente */
+  }
+
+  .btnEliminar {
+    width: 100%;
+  }
+  

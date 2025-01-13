@@ -106,5 +106,14 @@
     "img": "sin imagen",
     "code": "456123",
     "stock": "10000"
+  },
+  {
+    "id": 11,
+    "title": "sdfsdf",
+    "description": "fsdfsdf",
+    "price": "26456",
+    "thumbnail": "sin imagen",
+    "code": "6456456",
+    "stock": "68756"
   }
 ]

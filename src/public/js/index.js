@@ -10,26 +10,32 @@ socket.on("products", (data) => {
 
 
 const renderProducts = (products) => {
-    products.forEach(item => {
-        const card = dom.createElement("div");
-        card.classList.add("card");
-
-        card.innerHTML = `
-            <p>${item.title}</p>
-            <p>${item.price}</p>
-            <p>${item.description}</p>
-            <button type="button" class="btn btn-primary btnEliminar">
-                Eliminar
-            </button>
-        `;
-        productsContainer.appendChild(card)
-
-        card.querySelector("button").addEventListener("click", () => {
-            deleteProduct(item.id);
-        })
+    const productsRow = document.getElementById("productsRow");
+    productsRow.innerHTML = ""; // Limpia el contenedor antes de renderizar
+  
+    products.forEach((item) => {
+      const cardContainer = document.createElement("div");
+      cardContainer.classList.add("col-12", "col-sm-6", "col-md-4", "col-lg-3");
+  
+      cardContainer.innerHTML = `
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">${item.title}</h5>
+            <p class="card-text">Precio: ${item.price}</p>
+            <p class="card-text">${item.description}</p>
+            <button type="button" class="btn btn-primary btnEliminar">Eliminar</button>
+          </div>
+        </div>
+      `;
+  
+      const btnEliminar = cardContainer.querySelector(".btnEliminar");
+      btnEliminar.addEventListener("click", () => {
+        deleteProduct(item.id);
+      });
+  
+      productsRow.appendChild(cardContainer);
     });
-};
-
+  };
 
 const deleteProduct = (id) => {
     socket.emit("deleteProduct", id)
