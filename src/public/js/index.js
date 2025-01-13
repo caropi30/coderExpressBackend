@@ -40,6 +40,7 @@ const addProduct = () => {
         code: dom.getElementById("code").value,
         category: dom.getElementById("category").value,
         status: dom.getElementById("status").value === "true",
+        stock: dom.getElementById("stock").value,
     };
     console.log('PRODUCTO EN INDEX --->', product)
     socket.emit("addProduct", product)
