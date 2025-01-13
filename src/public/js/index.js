@@ -18,14 +18,22 @@ const renderProducts = (products) => {
             <p>${item.title}</p>
             <p>${item.price}</p>
             <p>${item.description}</p>
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="btn btn-primary btnEliminar">
                 Eliminar
             </button>
         `;
         productsContainer.appendChild(card)
+
+        card.querySelector("button").addEventListener("click", () => {
+            deleteProduct(item.id);
+        })
     });
 };
 
+
+const deleteProduct = (id) => {
+    socket.emit("deleteProduct", id)
+}
 
 btnEnviar.addEventListener("click", () => {
     addProduct();
@@ -45,3 +53,7 @@ const addProduct = () => {
     console.log('PRODUCTO EN INDEX --->', product)
     socket.emit("addProduct", product)
 };
+
+const deletePoduct = () => {
+
+}
